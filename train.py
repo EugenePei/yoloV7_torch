@@ -181,7 +181,7 @@ if __name__ == "__main__":
     #                       （断点续练时使用）
     #   Freeze_Epoch        模型冻结训练的Freeze_Epoch
     #                       (当Freeze_Train=False时失效)
-    #   Freeze_batch_size   模型冻结训练的batch_size
+    #   Freeze_batch_size   模型冻结训练的batch_size, 一般为2的倍数, 8是默认值
     #                       (当Freeze_Train=False时失效)
     #------------------------------------------------------------------#
     Init_Epoch          = 0
@@ -194,7 +194,7 @@ if __name__ == "__main__":
     #   UnFreeze_Epoch          模型总共训练的epoch
     #                           SGD需要更长的时间收敛，因此设置较大的UnFreeze_Epoch
     #                           Adam可以使用相对较小的UnFreeze_Epoch
-    #   Unfreeze_batch_size     模型在解冻后的batch_size
+    #   Unfreeze_batch_size     模型在解冻后的batch_size，一般为2的倍数, 4是默认值
     #------------------------------------------------------------------#
     UnFreeze_Epoch      = 300
     Unfreeze_batch_size = Unfreeze_batch_size_input
