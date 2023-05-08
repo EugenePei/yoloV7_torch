@@ -39,13 +39,12 @@ from utils.utils_fit import fit_one_epoch
 if __name__ == "__main__":  
     #parameters setting 
     try:   
-        opts, args = getopt.getopt(sys.argv[1:], 'p:', ['model='])
+        opts, args = getopt.getopt(sys.argv[1:], 'm:', ['model='])
     except getopt.GetoptError:
         print('Error: train.py -m <model>')    
-    print("opts:")
-    print(opts)
-    print("args")
-    print(args)
+    for opt, arg in opts:
+        if opt == '-m' or opt == '--model':
+            print('model: ', arg)
     #---------------------------------#
     #   Cuda    是否使用Cuda
     #           没有GPU可以设置成False
