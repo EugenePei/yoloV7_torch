@@ -381,7 +381,7 @@ if __name__ == "__main__":
     ema = ModelEMA(model_train)
     
     #---------------------------#
-    #   读取数据集对应的txt
+    #   读取数据集对应的txt， 通过训练集中的图片数量来确定总共要训练的次数
     #---------------------------#
     with open(train_annotation_path, encoding='utf-8') as f:
         train_lines = f.readlines()
