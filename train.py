@@ -39,7 +39,7 @@ from utils.utils_fit import fit_one_epoch
 if __name__ == "__main__":  
     #parameters setting 
     try:   
-        opts, args = getopt.getopt(sys.argv[1:], 'm:f:u', ['model_input=', 'Freeze_batch_size=','Unfreeze_batch_size='])
+        opts, args = getopt.getopt(sys.argv[1:], 'm:f:u:', ['model_input=', 'Freeze_batch_size=','Unfreeze_batch_size='])
     except getopt.GetoptError:
         print('Error: train.py -m <model_input> -f <Freeze_batch_size> -u <Unfreeze_batch_size>')
         sys.exit(2)     
@@ -49,10 +49,10 @@ if __name__ == "__main__":
             model_input = arg
         elif opt == '-f' or opt == '--Freeze_batch_size':
             print('Freeze_batch_size: ', arg)
-            Freeze_batch_size_input = int(arg) 
+            Freeze_batch_size_input = int(arg)
         elif opt == '-u' or opt == '--Unfreeze_batch_size':
             print('Unfreeze_batch_size: ', arg)
-            Unfreeze_batch_size_input = int(arg)   
+            Unfreeze_batch_size_input = int(arg)
     #---------------------------------#
     #   Cuda    是否使用Cuda
     #           没有GPU可以设置成False
