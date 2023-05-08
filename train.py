@@ -36,7 +36,16 @@ from utils.utils_fit import fit_one_epoch
 3、训练好的权值文件保存在logs文件夹中，每个训练世代（Epoch）包含若干训练步长（Step），每个训练步长（Step）进行一次梯度下降。
    如果只是训练了几个Step是不会保存的，Epoch和Step的概念要捋清楚一下。
 '''
-if __name__ == "__main__":
+if __name__ == "__main__":  
+    #parameters setting 
+    try:   
+        opts, args = getopt.getopt(sys.argv[1:], 'p:', ['model='])
+    except getopt.GetoptError:
+        print('Error: train.py -m <model>')    
+    print("opts:")
+    print(opts)
+    print("args")
+    print(args)
     #---------------------------------#
     #   Cuda    是否使用Cuda
     #           没有GPU可以设置成False
