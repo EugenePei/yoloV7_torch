@@ -45,6 +45,7 @@ if __name__ == "__main__":
     for opt, arg in opts:
         if opt == '-m' or opt == '--model':
             print('model: ', arg)
+            model_name = arg
     #---------------------------------#
     #   Cuda    是否使用Cuda
     #           没有GPU可以设置成False
