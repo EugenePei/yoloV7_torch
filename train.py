@@ -41,7 +41,8 @@ if __name__ == "__main__":
     try:   
         opts, args = getopt.getopt(sys.argv[1:], 'm:', ['model='])
     except getopt.GetoptError:
-        print('Error: train.py -m <model>')    
+        print('Error: train.py -m <model>')
+        sys.exit(2)     
     for opt, arg in opts:
         if opt == '-m' or opt == '--model':
             print('model: ', arg)
